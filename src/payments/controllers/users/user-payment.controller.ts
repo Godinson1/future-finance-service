@@ -9,6 +9,7 @@ export class UserPaymentController {
     private readonly userPaymentService: UserPaymentService,
     private readonly rmqService: RmqService,
   ) {}
+
   @EventPattern('user.created')
   registerUser(@Payload() data: any, @Ctx() context: RmqContext) {
     this.userPaymentService.registerUser(data);

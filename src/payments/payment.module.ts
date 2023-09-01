@@ -11,7 +11,6 @@ import { PaymentOrder } from './entities/payment-order.entity';
 @Module({
   imports: [
     TypeOrmModule.forFeature([Billing, PaymentOrder]),
-    RmqModule,
     AuthModule,
     RmqModule.register({ name: AUTH_SERVICE }),
   ],
